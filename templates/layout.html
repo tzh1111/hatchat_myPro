@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+          <script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+          <link rel="stylesheet" type="text/css" href="../static/semantic.min.css">
+          <script src="../static/semantic.min.js"></script>
+      <script>
+        $(document).ready(function() {
+            // 鼠标放到 dropdown 时显示下拉菜单,致所有的下拉框——
+            $('.dropdown.item').dropdown({
+                on: 'hover'
+            });
+        });
+        $('.special.cards .image').dimmer({
+        on: 'hover'
+        });
+    </script>
+      </head>
+      <body>
+      {% block username %}{% endblock %}
+        {% block content %}
+        {% endblock %}
+      </body>
+</html>

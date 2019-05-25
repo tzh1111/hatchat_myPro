@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block main %}
+    <div class="ui breadcrumb">
+  <a class="section" href="/">Home</a>
+  <div class="divider"> / </div>
+  <a class="section" href="chat">ChatGroup</a>
+  <div class="divider"> / </div>
+  <div class="active section">{{ name }}</div>
+</div>
+    <div class="ui raised very padded text container segment">
+  <h2 class="ui header">快乐水群</h2>
+        {% for msg in msgs %}
+
+            <div class="ui comments">
+  <div class="comment">
+    <a class="avatar">
+      <img src="../static/img/pika.jpg">
+    </a>
+    <div class="content">
+      <a class="author">{{ msg.mem }}</a>
+      <div class="metadata">
+        <div class="date">{{ msg.time}}</div>
+      </div>
+      <div class="text">
+        {{ msg.msg }}
+      </div>
+    </div>
+  </div>
+</div>
+        {% endfor %}
+</div>
+    <div class="ui input center aligned">
+        <input type="text">
+        <button class="ui basic button" type="submit">
+              <i class="icon paw"></i>
+            </button>
+</div>
+{% endblock %}

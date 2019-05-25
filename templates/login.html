@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            body{
+                 position: absolute;
+                 left: 50%;
+                 top: 50%;
+                width:200px;
+                height:100px;
+                margin-left:-150px;
+                margin-top:-50px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+    <div class="ui middle aligned center aligned grid">
+        <form class="form-horizontal" action="{{ url_for("login") }}" method="POST">
+
+      <div class="control-group">
+        <label class="control-label" for="username">Email</label>
+          <div class="controls center aligned">
+            <div class="ui left icon input">
+                <input type="text" name="username" placeholder="Email">
+                <i class="users icon"></i>
+            </div>
+          </div>
+      </div>
+            <br>
+
+      <div class="control-group">
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+            <div class="ui left icon input center aligned">
+          <input type="password" name="password" placeholder="Password">
+            <i class="lock icon"></i>
+            </div>
+        </div>
+      </div>
+            <br>
+
+      <div class="control-group">
+        <div class="controls">
+            <div class="ui checkbox">
+              <input type="checkbox" name="remember_me">
+              <label>remember me</label>
+                </div>
+            <br>
+            <div>
+                <button class="ui basic button" type="submit">
+              <i class="icon user"></i>
+              Sign in
+            </button>
+            </div>
+        </div>
+      </div>
+
+        {{ form.csrf_token }}
+    </form>
+        </div>
+    </body>
+</html>
+{% endblock %}

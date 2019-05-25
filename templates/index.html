@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="ui grid">
+  <div class="three wide column">
+      <div class="ui card">
+  <div class="image">
+    <img src="../static/img/pika.jpg">
+  </div>
+  <div class="content">
+    <a class="header">Kristy</a>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+  </div>
+</div>
+      <div class="vertical center aligned">
+<div class="ui vertical menu">
+    <a class="item" href="/">
+        <i class="home icon"></i>My Homepage
+    </a>
+    <br>
+  <a class="item", href="chat">
+    <i class="comments icon"></i>My ChatGroup
+  </a>
+    <br>
+  <a class="item" href="myfriends">
+      <i class="heart icon"></i>My Friends
+  </a>
+    <br>
+  <div class="ui dropdown item">
+    More
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a class="item" href="editprofile"><i class="edit icon"></i> Edit Profile</a>
+      <a class="item" href="logout"><i class="icon power off"></i> Logout</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+    <div >
+        <br><br><br>
+     {% block main %}
+
+     <div class="ui raised very padded text container segment">
+  <h2 class="ui header">MY DIARY BOOK~</h2>
+        {% for diary in diaries %}
+            <div class="ui comments">
+  <div class="comment">
+    <a class="avatar">
+      <img src="../static/img/pika.jpg">
+    </a>
+    <div class="content">
+      <div class="metadata">
+        <div class="date">{{ diary.time}}</div>
+      </div>
+ <div class="text">{{ diary.content}}</div>
+    </div>
+  </div>
+</div>
+        {% endfor %}
+</div>
+
+
+     {% endblock %}
+    </div>
+    </div>
+</div>
+{% endblock %}
